@@ -18,8 +18,8 @@ public class app {
          * Menor que:
          * Mayor o igual que:
          * */
-        Scanner leer =new Scanner(System.in);
-        String nombreEmpleado = "" ;
+        Scanner leer = new Scanner(System.in);
+        String nombreEmpleado = "";
         String Documento = "";
         String diaDescanso = "";
         String usuarioEmpleado = "";
@@ -31,6 +31,7 @@ public class app {
         double valorHora = 0;
         double cantidadHoras = 0;
         double bonificacionEmpleado = 0;
+        double valorSalarioMinimo = 0;
         int auxilioTransporte = 200000;
 
         System.out.println("Ingrese su usuario:");
@@ -39,9 +40,34 @@ public class app {
         contrasenaUsuario = leer.nextLine();
         if (usuarioEmpleado.equals("admin") && contrasenaUsuario.equals("admin")) {
             System.out.println("Ha ingresado de manera correcta");
-        }else{System.out.println("Error en credenciales");
+            System.out.print("Por favor ingrese el nombre del empleado");
+            nombreEmpleado = leer.nextLine();
+            System.out.print("Ingrese su documento de identidad");
+            Documento = leer.nextLine();
+            System.out.print("Ingrese el día de descanso (debe ser de lunes a viernes");
+            diaDescanso = leer.nextLine();
+            System.out.print("Ingrese el valor de la hora");
+            valorHora = leer.nextDouble();
+            System.out.print("Ingrese la cantidad de horas laboradas");
+            cantidadHoras = leer.nextDouble();
+            System.out.print("Ingrese el valor del salario minimo actual");
+            valorSalarioMinimo = leer.nextDouble();
+            salarioBruto = valorHora * cantidadHoras;
+            if (salarioBruto > (valorSalarioMinimo * 2)) {
+                bonificacionEmpleado = 0;
+            } else {
+                bonificacionEmpleado = salarioBruto * 0.1;
+                auxilioTransporte = 200000;
+            }
+            salarioNeto = bonificacionEmpleado + auxilioTransporte + salarioBruto;
+            System.out.print("El salario neto es" + salarioNeto);
+
+            {
+                System.out.println("Error en credenciales");
+            }
+
         }
-
-
     }
 }
+
+
