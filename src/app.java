@@ -44,13 +44,13 @@ public class app {
             nombreEmpleado = leer.nextLine();
             System.out.print("Ingrese su documento de identidad");
             Documento = leer.nextLine();
-            System.out.print("Ingrese el día de descanso (debe ser de lunes a viernes");
+            System.out.print("Ingrese el día de descanso (debe ser de lunes a viernes)");
             diaDescanso = leer.nextLine();
-            System.out.print("Ingrese el valor de la hora");
+            System.out.print("Ingrese el valor de la hora ");
             valorHora = leer.nextDouble();
-            System.out.print("Ingrese la cantidad de horas laboradas");
+            System.out.print("Ingrese la cantidad de horas laboradas ");
             cantidadHoras = leer.nextDouble();
-            System.out.print("Ingrese el valor del salario minimo actual");
+            System.out.print("Ingrese el valor del salario minimo actual ");
             valorSalarioMinimo = leer.nextDouble();
             salarioBruto = valorHora * cantidadHoras;
             if (salarioBruto > (valorSalarioMinimo * 2)) {
@@ -58,11 +58,12 @@ public class app {
             } else {
                 bonificacionEmpleado = salarioBruto * 0.1;
                 auxilioTransporte = 200000;
-            }
-            salarioNeto = bonificacionEmpleado + auxilioTransporte + salarioBruto;
-            System.out.print("El salario neto es" + salarioNeto);
-
-            {
+                retencionSalud = salarioBruto * 0.04;
+                retencionPension = salarioBruto * 0.04;
+                salarioNeto = (bonificacionEmpleado + auxilioTransporte + salarioBruto)-(retencionPension+retencionSalud);
+                System.out.print("Detalle de Nómina empleado");
+                System.out.println("El empleado " + nombreEmpleado + " con documento " + Documento + " Tiene el siguiente detalle de nomina:\n Salario Bruto: " + salarioBruto + "\nSalario Neto: "+ salarioNeto +"\n Deduccion por salud: "+retencionSalud+"\nDeduccion por pension: "+retencionPension+"\nAuxilio de transporte: "+auxilioTransporte+"\nBonificacion empleado: "+bonificacionEmpleado);
+            } else{
                 System.out.println("Error en credenciales");
             }
 
