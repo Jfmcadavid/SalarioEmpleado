@@ -35,21 +35,21 @@ public class app {
         int auxilioTransporte = 200000;
 
         System.out.println("Ingrese su usuario:");
-        usuarioEmpleado = leer.nextLine();
+        usuarioEmpleado=leer.nextLine();
         System.out.println("Por favor ingresar su contraseña:");
-        contrasenaUsuario = leer.nextLine();
+        contrasenaUsuario=leer.nextLine();
         if (usuarioEmpleado.equals("admin") && contrasenaUsuario.equals("admin")) {
             System.out.println("Ha ingresado de manera correcta");
-            System.out.print("Por favor ingrese el nombre del empleado");
-            nombreEmpleado = leer.nextLine();
-            System.out.print("Ingrese su documento de identidad");
-            Documento = leer.nextLine();
-            System.out.print("Ingrese el día de descanso (debe ser de lunes a viernes)");
-            diaDescanso = leer.nextLine();
+            System.out.print("Por favor ingrese el nombre del empleado ");
+            nombreEmpleado=leer.nextLine();
+            System.out.print("Ingrese su documento de identidad ");
+            Documento=leer.nextLine();
+            System.out.print("Ingrese el día de descanso (debe ser de lunes a viernes) ");
+            diaDescanso=leer.nextLine();
             System.out.print("Ingrese el valor de la hora ");
-            valorHora = leer.nextDouble();
+            valorHora=leer.nextDouble();
             System.out.print("Ingrese la cantidad de horas laboradas ");
-            cantidadHoras = leer.nextDouble();
+            cantidadHoras=leer.nextDouble();
             System.out.print("Ingrese el valor del salario minimo actual ");
             valorSalarioMinimo = leer.nextDouble();
             salarioBruto = valorHora * cantidadHoras;
